@@ -112,15 +112,17 @@
         </div>
         <div class="col-sm-6 col-xs-12 right">
           <div class="form-group">
-            <textarea name="message" id="message" cols="80" rows="9" class="from-control"
-                      data-msg="Proszę wpisać treść wiadomości"></textarea>
+            <textarea name="message" class="form-control" id="message" rows="5" class="from-control" data-rule="required"
+                      data-msg="Proszę wpisać treść wiadomości" placeholder="Wiadomość"></textarea>
             <div class="validation"></div>
           </div>
         </div>
         <!-- Send button -->
-        <button type="submit" id="submit" name="submit" class="form contact-form-button light-form-button oswald light">
-          Wyślij
-        </button>
+        <div class="col-xs-12">
+          <button type="submit" id="submit" name="submit" class="form contact-form-button light-form-button oswald light">
+            Wyślij
+          </button>
+        </div>
         <!--/ Send button -->
       </form>
     </div>
