@@ -28,14 +28,11 @@
 </head>
 <body>
 <!-- Google Maps. -->
-<div id="map-btn1-div">
-  <a href="#maps" id="map-btn1" class="gmaps-btn close-maps-button btn-show">Pokaż na mapie</a>
+<div map-lazy-load="https://maps.google.com/maps/api/js">
+  <ng-map center="50.20007,17.8234893" zoom="15" style="height: 700px;">
+    <marker position="[50.19994,17.8227293]" />
+  </ng-map>
 </div>
-<a href="#maps" id="map-btn2" class="btn btn-skin btn-lg btn-noradius gmaps-btn close-maps-button btn-hide"
-   title="Zamknij mapę" data-toggle="tooltip">ul. Niepodległości X, 48-100 Głubczyce</a>
-<section id="maps" class="close-maps">
-  <div id="google-maps"></div>
-</section>
 <!--/ Google Maps. -->
 
 <!-- Contact. -->
@@ -44,7 +41,7 @@
     <div class="row">
       <div class="header-section text-center">
         <h2>Skontaktuj się z nami</h2>
-        <p>+48 600 600 600<br>centrumodrodzenia@gmail.com</p>
+        <p>+48 600 600 600<br>centrumodrodzenia@gmail.com<br>ul. Niepodległości 12A, 48-100 Głubczyce</p>
         <hr class="bottom-line">
       </div>
       <div id="sendmessage">Twoja wiadomość została wysłana. Skontaktujemy się z Tobą tak szybko, jak to będzie
@@ -93,10 +90,5 @@
   </div>
 </section>
 <!-- /Contact. -->
-
-<!-- Google Maps initialization. -->
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgak4bu3Ppg2MGxaoi56ymcUrfiWQXM3A&callback=initMap"></script>
-<!--/ Google Maps initialization. -->
 </body>
 </html>
