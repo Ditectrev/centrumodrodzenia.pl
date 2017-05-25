@@ -1,23 +1,10 @@
 (function ($) {
+  "use strict";
+
   // Display current year.
   $('.year').html(new Date().getFullYear());
 })(jQuery);
 
-// Initialize Google Maps.
-// function initMap() {
-//   var myLatLng = {lat: 50.20007, lng: 17.8234893};
-//
-//   // Create a map object and specify the DOM element for display.
-//   var map = new google.maps.Map(document.getElementById('google-maps'), {
-//     zoom: 15,
-//     center: myLatLng
-//   });
-//   // Create a marker and set its position.
-//   var marker = new google.maps.Marker({
-//     position: myLatLng,
-//     map: map
-//   });
-// }
 
 // Angular routing.
 document.write('<base href="' + document.location + '" />');

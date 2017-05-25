@@ -29,7 +29,7 @@
 <body>
 <!-- Google Maps. -->
 <div map-lazy-load="https://maps.google.com/maps/api/js" class="google-maps">
-  <ng-map center="50.19994,17.8227293" zoom="15" style="height: 700px;">
+  <ng-map center="50.19994,17.8227293" zoom="15" style="height: 500px;">
     <marker position="[50.19994,17.8227293]" />
   </ng-map>
 </div>
@@ -48,47 +48,66 @@
         możliwe.
       </div>
       <div id="errormessage"></div>
-      <form action="#" method="post" class="contactForm">
+      <!--<div class="messages" ng-show="message">{{message}}</div>-->
+      <form method="post" role="form" class="contactForm">
         <div class="col-sm-6 col-xs-12 left">
+          <!-- Name. -->
+          <!--<div class="form-group" ng-class="{'has-error': errorName}">-->
           <div class="form-group">
             <input type="text" name="name" class="form-control form" id="name" placeholder="Imię" data-rule="minlen: 3"
                    data-msg="Proszę wpisać przynajmniej 3 litery">
+            <!--<span class="help-block" ng-show="errorName">{{errorName}}</span>-->
             <div class="validation"></div>
           </div>
+          <!-- Subject. -->
+          <!--<div class="form-group" ng-class="{'has-error': errorSubject}">-->
           <div class="form-group">
             <input type="text" name="subject" class="form-control" id="subject" placeholder="Temat"
                    data-rule="minlen: 5" data-msg="Proszę wpisać przynajmniej 5 liter">
+            <!--<span class="help-block" ng-show="errorSubject">{{errorSubject}}</span>-->
             <div class="validation"></div>
           </div>
+          <!-- Telephone. -->
+          <!--<div class="form-group" ng-class="{'has-error': errorTelephone}">-->
           <div class="form-group">
-            <input type="tel" name="telephone" class="form-control" id="telephone" placeholder="Telefon"
-                   data-rule="minlen: 9" data-msg="Proszę wpisać przynajmniej 9 cyfr">
+            <input type="tel" name="tel" class="form-control" id="tel" placeholder="Telefon"
+                   data-rule="tel" data-msg="Proszę wpisać 9 cyfr">
+            <!--<span class="help-block" ng-show="errorTelephone">{{errorTelephone}}</span>-->
             <div class="validation"></div>
           </div>
+          <!-- Email. -->
+          <!--<div class="form-group" ng-class="{'has-error': errorEmail}">-->
           <div class="form-group">
             <input type="email" name="email" class="form-control" id="email" placeholder="E-mail" data-rule="email"
-                   data-msg="Proszę wpisać przynajmniej 3 litery">
+                   data-msg="Proszę wpisać poprawny adres e-mail">
+            <!--<span class="help-block" ng-show="errorEmail">{{errorEmail}}</span>-->
             <div class="validation"></div>
           </div>
         </div>
         <div class="col-sm-6 col-xs-12 right">
+          <!-- Message. -->
+          <!--<div class="form-group" ng-class="{'has-error': errorMessage}">-->
           <div class="form-group">
-            <textarea name="message" class="form-control" id="message" rows="5" class="from-control" data-rule="required"
+            <textarea name="message" class="form-control" id="message" rows="5" data-rule="required"
                       data-msg="Proszę wpisać treść wiadomości" placeholder="Wiadomość"></textarea>
+            <!--<span class="help-block" ng-show="errorMessage">{{errorMessage}}</span>-->
             <div class="validation"></div>
           </div>
         </div>
-        <!-- Send button -->
+        <!-- Send button. -->
         <div class="col-xs-12">
           <button type="submit" id="submit" name="submit" class="form contact-form-button light-form-button oswald light">
             Wyślij
           </button>
         </div>
-        <!--/ Send button -->
+        <!--/ Send button. -->
       </form>
+      <!--<pre>{{formData}}</pre>-->
     </div>
   </div>
 </section>
 <!-- /Contact. -->
+<!--<script src="js/contact.js"></script>-->
+<script src="js/contact-form.js"></script>
 </body>
 </html>
