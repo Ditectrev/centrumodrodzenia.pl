@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="pl" ng-app="contactApp">
 <head>
   <!-- Page title -->
   <title>Centrum Odrodzenia Feniks - Kontakt</title>
@@ -26,7 +26,7 @@
   <meta property="og:image" content="https://centrumodrodzenia.pl/logo.png"/>
   <!--/ Facebook meta. -->
 </head>
-<body>
+<body ng-controller="contactForm">
 <!-- Google Maps. -->
 <div map-lazy-load="https://maps.google.com/maps/api/js" class="google-maps">
   <ng-map center="50.19994,17.8227293" zoom="15" style="height: 500px;">
@@ -44,70 +44,82 @@
         <p>+48 600 600 600<br>centrumodrodzenia@gmail.com<br>ul. Niepodległości 12A, 48-100 Głubczyce</p>
         <hr class="bottom-line">
       </div>
-      <div id="sendmessage">Twoja wiadomość została wysłana. Skontaktujemy się z Tobą tak szybko, jak to będzie
-        możliwe.
-      </div>
-      <div id="errormessage"></div>
-      <!--<div class="messages" ng-show="message">{{message}}</div>-->
-      <form method="post" role="form" class="contactForm">
+      <!--<div id="sendmessage">Twoja wiadomość została wysłana. Skontaktujemy się z Tobą tak szybko, jak to będzie-->
+        <!--możliwe.-->
+      <!--</div>-->
+      <!--<div id="errormessage"></div>-->
+      <div class="messages" ng-show="message">{{message}}</div>
+      <form name="form" method="post" role="form" class="contactForm" novalidate> <!-- Prevents HTML5 validation since custom validation will be used. -->
         <div class="col-sm-6 col-xs-12 left">
           <!-- Name. -->
-          <!--<div class="form-group" ng-class="{'has-error': errorName}">-->
-          <div class="form-group">
-            <input type="text" name="name" class="form-control form" id="name" placeholder="Imię" data-rule="minlen: 3"
-                   data-msg="Proszę wpisać przynajmniej 3 litery">
-            <!--<span class="help-block" ng-show="errorName">{{errorName}}</span>-->
-            <div class="validation"></div>
+          <div class="form-group" ng-class="{'has-error': form.name.$invalid && !form.name.$pristine}">
+          <!--<div class="form-group">-->
+            <input type="text" name="name" class="form-control form" id="name" placeholder="Imię" ng-model="formData.name" ng-minlength="3" required>
+            <!--<span ng-show="form.formData.name.$touched && form.formData.name.$invalid">Proszę wpisać przynajmniej 3 litery</span>-->
+            <span class="help-block" ng-show="form.name.$error.minlength">Proszę wpisać przynajmniej 3 litery.</span>
+            <!--<div class="validation"></div>-->
           </div>
           <!-- Subject. -->
-          <!--<div class="form-group" ng-class="{'has-error': errorSubject}">-->
-          <div class="form-group">
-            <input type="text" name="subject" class="form-control" id="subject" placeholder="Temat"
-                   data-rule="minlen: 5" data-msg="Proszę wpisać przynajmniej 5 liter">
-            <!--<span class="help-block" ng-show="errorSubject">{{errorSubject}}</span>-->
-            <div class="validation"></div>
+          <div class="form-group" ng-class="{'has-error': form.subject.$invalid && !form.subject.$pristine}">
+          <!--<div class="form-group">-->
+            <input type="text" name="subject" class="form-control" id="subject" placeholder="Temat" ng-model="formData.subject" ng-minlength="5" required>
+            <span class="help-block" ng-show="form.subject.$error.minlength">Proszę wpisać przynajmniej 5 liter.</span>
+            <!--<div class="validation"></div>-->
           </div>
           <!-- Telephone. -->
-          <!--<div class="form-group" ng-class="{'has-error': errorTelephone}">-->
-          <div class="form-group">
-            <input type="tel" name="tel" class="form-control" id="tel" placeholder="Telefon"
-                   data-rule="tel" data-msg="Proszę wpisać 9 cyfr">
-            <!--<span class="help-block" ng-show="errorTelephone">{{errorTelephone}}</span>-->
-            <div class="validation"></div>
+          <div class="form-group" ng-class="{'has-error': form.tel.$invalid && !form.tel.$pristine}">
+          <!--<div class="form-group">-->
+            <input type="tel" name="tel" class="form-control" id="tel" placeholder="Telefon" ng-model="formData.tel" ng-minlength="9" ng-maxlength="9" required>
+            <span class="help-block" ng-show="form.tel.$error.minlength || form.tel.$error.maxlength">Proszę wpisać poprawny numer telefonu.</span>
+            <!--<div class="validation"></div>-->
           </div>
           <!-- Email. -->
-          <!--<div class="form-group" ng-class="{'has-error': errorEmail}">-->
-          <div class="form-group">
-            <input type="email" name="email" class="form-control" id="email" placeholder="E-mail" data-rule="email"
-                   data-msg="Proszę wpisać poprawny adres e-mail">
-            <!--<span class="help-block" ng-show="errorEmail">{{errorEmail}}</span>-->
-            <div class="validation"></div>
+          <div class="form-group" ng-class="{'has-error': form.email.$invalid && !form.email.$pristine}" required>
+          <!--<div class="form-group">-->
+            <input type="email" name="email" class="form-control" id="email" placeholder="E-mail" ng-model="formData.email"ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/">
+            <span class="help-block" ng-show="form.email.$invalid && !form.email.$pristine">Proszę wpisać poprawny adres e-mail.</span>
+            <!--<div class="validation"></div>-->
           </div>
         </div>
         <div class="col-sm-6 col-xs-12 right">
           <!-- Message. -->
-          <!--<div class="form-group" ng-class="{'has-error': errorMessage}">-->
-          <div class="form-group">
-            <textarea name="message" class="form-control" id="message" rows="5" data-rule="required"
-                      data-msg="Proszę wpisać treść wiadomości" placeholder="Wiadomość"></textarea>
-            <!--<span class="help-block" ng-show="errorMessage">{{errorMessage}}</span>-->
-            <div class="validation"></div>
+          <div class="form-group" ng-class="{'has-error': form.message.$invalid && !form.message.$pristine}">
+          <!--<div class="form-group">-->
+            <textarea name="message" class="form-control" id="message" rows="5" placeholder="Wiadomość" ng-model="formData.message" ng-minlength="10" required></textarea>
+            <span class="help-block" ng-show="form.message.$error.minlength">Proszę wpisać dłuższą treść wiadomości.</span>
+            <h2>form is {{form.formData.message.$valid}}</h2>
+            <!--<div class="validation"></div>-->
           </div>
         </div>
         <!-- Send button. -->
         <div class="col-xs-12">
-          <button type="submit" id="submit" name="submit" class="form contact-form-button light-form-button oswald light">
+          <button type="submit" id="submit" name="submit" class="form contact-form-button light-form-button oswald light" ng-submit="processForm()" ng-disabled="form.$invalid">
             Wyślij
           </button>
         </div>
         <!--/ Send button. -->
       </form>
-      <!--<pre>{{formData}}</pre>-->
+      <pre>{{formData}}</pre>
     </div>
   </div>
 </section>
 <!-- /Contact. -->
-<!--<script src="js/contact.js"></script>-->
-<script src="js/contact-form.js"></script>
+<!-- JavaScript CDN. -->
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-google-maps/2.4.1/angular-google-maps.min.js"></script>
+<!--/ JavaScript CDN. -->
+<script src="js/contact.js"></script>
+<!--<script src="js/contact-form.js"></script>-->
 </body>
 </html>
