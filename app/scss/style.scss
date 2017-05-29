@@ -579,14 +579,6 @@ textarea {
   max-width: 100%;
 }
 
-.validation {
-  color: $red;
-  display: none;
-  font-size: 13px;
-  font-weight: 400;
-  margin: 0 0 20px;
-}
-
 // Media Queries.
 @media (min-width: 769px) and (max-width: 980px) {
   .price-table {

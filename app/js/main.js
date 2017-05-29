@@ -65,6 +65,30 @@ app.controller('HeaderController',
   };
 }]);
 
+// Contact form.
+app.controller('FormController', function($scope, $http) {
+  $scope.formData = {};
+
+  console.log('inside form controller');
+
+  $scope.submitForm = function () {
+    console.log('sending...');
+    // Default values for the request.
+    $http({
+      method: 'POST',
+      url: 'php/contact-form.php',
+      data: $scope.formData, // Angular will take care about serializing.
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'} // Set the headers so angular passing info as form data (not request payload).
+    })
+      .then(function successCallback(response) {
+        $scope.formData = {}; // Clear input fields in contact form.
+        console.log('success while sending, response data: ' + response.data);
+      }, function errorCallback(response) {
+        console.log('error while sending, response: ' + response);
+      });
+  }
+});
+
 app.controller('HomeController', function ($scope, $compile) {
   // console.log('inside home controller');
 });
