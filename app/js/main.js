@@ -1,20 +1,12 @@
-(function ($) {
-  "use strict";
-
-  // Display current year.
-  $('.year').html(new Date().getFullYear());
-})(jQuery);
-
-
 // Angular routing.
 document.write('<base href="' + document.location + '" />');
 
-var app = angular.module('myApp', ['ngRoute', 'ngMap'])
+var app = angular.module('myApp', ['ngRoute', 'ngMap', 'ngMaterial', 'ngAnimate', 'ngAria'])
   .config(function($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'glowna.html',
-        controller: 'HomeController'
+        controller: 'MainController'
       })
       .when('/uslugi', {
         templateUrl: 'uslugi.html',
@@ -34,36 +26,11 @@ var app = angular.module('myApp', ['ngRoute', 'ngMap'])
       })
       .otherwise({
         redirectTo: '/',
-        controller: 'HomeController'
+        controller: 'MainController'
       });
 
     $locationProvider.html5Mode(true); // Remove hashes from URL.
 });
-
-app.controller('HeaderController',
-['$scope', '$location', function($scope, $location) {
-  $scope.navClass = function (page) {
-    var currentRoute = $location.path().substring(1) || 'home';
-    return page === currentRoute ? 'active' : '';
-  };
-
-  // Load appropriate page according to clicked menu item.
-  $scope.loadHome = function () {
-    $location.url('/');
-  };
-  $scope.loadServices = function () {
-    $location.url('/uslugi');
-  };
-  $scope.loadAbout = function () {
-    $location.url('/o-nas');
-  };
-  $scope.loadPricing = function () {
-    $location.url('/cennik');
-  };
-  $scope.loadContact = function () {
-    $location.url('/kontakt');
-  };
-}]);
 
 // Contact form.
 app.controller('FormController', function($scope, $http) {
@@ -89,9 +56,42 @@ app.controller('FormController', function($scope, $http) {
   }
 });
 
-app.controller('HomeController', function ($scope, $compile) {
-  // console.log('inside home controller');
-});
+app.controller('MainController', ['$scope', '$location', function($scope, $location) {
+  // console.log('inside main controller');
+
+  // Get active route with its location.
+  $scope.navClass = function (page) {
+    var currentRoute = $location.path().substring(1) || 'home';
+    return page === currentRoute ? 'active' : '';
+  };
+
+  $scope.date = new Date(); // Set current date.
+
+  // Load appropriate page according to clicked menu item.
+  $scope.loadHome = function () {
+    $location.url('/');
+  };
+  $scope.loadServices = function () {
+    $location.url('/uslugi');
+  };
+  $scope.loadAbout = function () {
+    $location.url('/o-nas');
+  };
+  $scope.loadPricing = function () {
+    $location.url('/cennik');
+  };
+  $scope.loadContact = function () {
+    $location.url('/kontakt');
+  };
+
+  // Smooth scrolling.
+  $scope.scrollTo = function (element) {
+    $('html, body').animate({
+      scrollTop: $(element).offset().top
+    }, 1500);
+  }
+}]);
+
 app.controller('ServicesController', function ($scope, $compile) {
   // console.log('inside services controller');
 });
