@@ -9,10 +9,19 @@ var minifyCSS = require('gulp-minify-css');
 var uglify = require('gulp-uglify');
 var sass = require('gulp-sass');
 var browserSync = require('browser-sync').create();
+var concat = require('gulp-concat');
 var reload = browserSync.reload;
 
 var SRC = './app/js/*.js'; // source will be all .js files
 var DEST = './dist/js'; // destitation of .js files
+
+// Concat JavaScript code.
+gulp.task('concat', function () {
+  return gulp.src('./app/js/*.js')
+  // return gulp.src(['./app/js/one.js, ./app/js/two.js'])
+    .pipe(concat('all.js', {newLine: ';'}))
+    .pipe(gulp.dest('./dist/js'));
+});
 
 gulp.task('serve', ['sass', 'minify-css'], function () {
   browserSync.init({

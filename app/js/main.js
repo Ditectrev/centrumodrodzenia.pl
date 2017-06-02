@@ -39,7 +39,7 @@ app.controller('FormController', function($scope, $http) {
   console.log('inside form controller');
 
   $scope.submitForm = function () {
-    console.log('sending...');
+    // console.log('sending...');
     // Default values for the request.
     $http({
       method: 'POST',
@@ -49,9 +49,9 @@ app.controller('FormController', function($scope, $http) {
     })
       .then(function successCallback(response) {
         $scope.formData = {}; // Clear input fields in contact form.
-        console.log('success while sending, response data: ' + response.data);
+        // console.log('success while sending, response data: ' + response.data);
       }, function errorCallback(response) {
-        console.log('error while sending, response: ' + response);
+        // console.log('error while sending, response: ' + response);
       });
   }
 });
