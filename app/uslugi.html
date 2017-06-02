@@ -36,94 +36,15 @@
         <p>Poniżej prezentujemy Państwu zakres świadczonych przez nas usług.</p>
         <hr class="bottom-line">
       </div>
-      <div class="col-md-4 col-sm-6 padleft-right">
-        <h3 class="service-title">Diagnostyka i terapia narządów</h3>
-        <figure class="imghvr-zoom-out"><img src="./images/course01.jpg" alt="usługa 1" title="Usługa 1"
+      <div class="col-md-4 col-sm-6 padleft-right" ng-repeat="item in data">
+        <h3 class="service-title">{{item.title}}</h3>
+        <figure class="imghvr-zoom-out"><img src="{{item.image}}" alt="usługa 1" title="Usługa 1"
                                                      class="img-responsive">
           <figcaption>
-            <p>Opis usługi</p>
+            <p>{{item.description}}</p>
           </figcaption>
           <a href="#"></a>
         </figure>
-      </div>
-      <div class="col-md-4 col-sm-6 padleft-right">
-        <h3 class="service-title">Diagnostyka i likwidacja boreliozy</h3>
-        <figure class="imghvr-zoom-out"><img src="./images/course02.jpg" alt="usługa 2" title="Usługa 2"
-                                                     class="img-responsive">
-          <figcaption>
-            <p>Opis usługi</p>
-          </figcaption>
-          <a href="#"></a>
-        </figure>
-      </div>
-      <div class="col-md-4 col-sm-6 padleft-right">
-        <h3 class="service-title">Diagnostyka i likwidacja bakterii i wirusów</h3>
-        <figure class="imghvr-zoom-out"><img src="./images/course03.jpg" alt="usługa 3" title="Usługa 3"
-                                                     class="img-responsive">
-          <figcaption>
-            <p>Opis usługi</p>
-          </figcaption>
-          <a href="#"></a>
-        </figure>
-      </div>
-      <div class="col-md-4 col-sm-6 padleft-right">
-        <h3 class="service-title">Diagnostyka i likwidacja pasożytów</h3>
-        <figure class="imghvr-zoom-out"><img src="./images/course04.jpg" alt="usługa 4" title="Usługa 4"
-                                                     class="img-responsive">
-          <figcaption>
-            <p>Opis usługi</p>
-          </figcaption>
-          <a href="#"></a>
-        </figure>
-      </div>
-      <div class="col-md-4 col-sm-6 padleft-right">
-        <h3 class="service-title">Terapia stanów psychologicznych</h3>
-        <figure class="imghvr-zoom-out"><img src="./images/course05.jpg" alt="usługa 5" title="Usługa 5"
-                                                     class="img-responsive">
-          <figcaption>
-            <p>Opis usługi</p>
-          </figcaption>
-          <a href="#"></a>
-        </figure>
-      </div>
-      <div class="col-md-4 col-sm-6 padleft-right">
-        <h3 class="service-title">Diagnostyka i likwidacja alergii</h3>
-        <figure class="imghvr-zoom-out"><img src="./images/course06.jpg" alt="usługa 6" title="Usługa 6"
-                                                     class="img-responsive">
-          <figcaption>
-            <p>Opis usługi</p>
-          </figcaption>
-          <a href="#"></a>
-        </figure>
-      </div>
-      <div class="col-md-4 col-sm-6 padleft-right">
-        <h3 class="service-title">Terapia Uzależnień</h3>
-        <figure class="imghvr-zoom-out"><img src="./images/course07.jpg" alt="usługa 7" title="Usługa 7"
-                                                     class="img-responsive">
-          <figcaption>
-            <p>Opis usługi</p>
-          </figcaption>
-          <a href="#"></a>
-        </figure>
-      </div>
-      <div class="col-md-4 col-sm-6 padleft-right">
-        <h3 class="service-title">Detoksykacja organizmu</h3>
-        <figure class="imghvr-zoom-out"><img src="./images/course08.jpg" alt="usługa 8" title="Usługa 8"
-                                                     class="img-responsive">
-          <figcaption>
-            <p>Opis usługi</p>
-          </figcaption>
-          <a href="#"></a>
-        </figure>
-      </div>
-      <div class="col-md-4 col-sm-6 padleft-right">
-        <h3 class="service-title">Dobranie rodzajów oraz indywidualnych dawek leków i suplementów</h3>
-        <figure class="imghvr-zoom-out"><img src="./images/course01.jpg" alt="usługa 9" title="Usługa 9"
-                                                     class="img-responsive">
-          <figcaption>
-            <p>Opis usługi</p>
-          </figcaption>
-          <a href="#"></a></figure>
       </div>
     </div>
   </div>
