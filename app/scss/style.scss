@@ -137,15 +137,24 @@ ul, ol {
       font-weight: 100;
     }
   }
-  .navbar-nav > li > a {
-    color: $rolling-stone;
-    font-size: 14px;
-    font-weight: 700;
-    margin: 10px 5px;
-    padding: 10px 15px;
+  .navbar-nav {
+    > .active a {
+      background-color: $white;
 
-    &:hover {
-      color: $emerald;
+      &:focus, &:hover {
+        background-color: $white;
+      }
+    }
+    > li > a {
+      color: $rolling-stone;
+      font-size: 14px;
+      font-weight: 700;
+      margin: 10px 5px;
+      padding: 10px 15px;
+
+      &:hover {
+        color: $emerald;
+      }
     }
   }
 }
