@@ -117,14 +117,14 @@ app.controller('AboutController', function ($scope, $compile) {
   // console.log('inside about controller');
 
   $scope.data = [{
-    name: 'Mateusz',
-    title: 'Szef',
-    description: 'Terapeuta w wieloletnim doświadczeniem, inżynier w dziedzinie technologii chemicznej',
+    name: 'Klaudia Buczek',
+    title: 'mgr chemii medycznej',
+    description: 'Konsultantka totalnej biologii, radiesteta–terapeutka oraz refleksoterapeutka. Pasjonatka medycyny chińskiej oraz opartej na niej dietetyki pięciu przemian. Certyfikowana operatorka biorezonansu Sensitiv Imago 530. Ukończyła także szkolenie z obsługi urządzenia BICOM. Odbyła kurs metody samokontroli umysłu metodą Silvy. Dzięki specjalistycznym kursom naturoterapii zdobyła umiejętności  wykonywania masażu bańką chińską, masażu energetycznego polarity, świecowania uszu. W swojej pracy kieruje się poszukiwaniem prawdziwej przyczyny problemu co zapewnia skuteczność oraz precyzję w działaniu.',
     image: './images/mentor.jpg'
   }, {
-    name: 'Mateusz',
-    title: 'Szef',
-    description: 'Terapeuta w wieloletnim doświadczeniem, inżynier w dziedzinie technologii chemicznej',
+    name: 'Mateusz Pruszowski',
+    title: 'inż. chemii procesowej',
+    description: 'Konsultant totalnej biologii. Certyfikowany operator Sensitiv Imago 530. Ukończył szkolenie z obsługi urządzenia BICOM. Ukończył kursy metody samokontroli umysłu metodą Silvy. Dzięki specjalistycznym kursom naturoterapii zdobył umiejętności  wykonywania masażu bańką chińską, masażu energetycznego polarity oraz Reiki, świecowania i konchowania uszu. Pasjonat i student medycyny chińskiej. Refleksoterapeuta.  Jego misją jest szczera pomoc w rozwiązywaniu problemów zdrowotnych oraz poszerzanie świadomości społeczeństwa.',
     image: './images/mentor.jpg'
   }]
 });
@@ -134,14 +134,20 @@ app.controller('PricingController', function ($scope) {
   // console.log('inside pricing controller');
 
   $scope.data = [{
-    title: 'Diagnoza kontrolna Sensitive Imago 530',
+    title: 'Diagnoza kontrolna',
     description: '0 zł'
   }, {
-    title: 'Diagnoza ogólna Sensitive Imago 530',
-    description: '250 zł'
+    title: 'Diagnoza ogólna Sensitiv Imago 530 + BICOM (PROMOCJA - 250 zł)',
+    description: '300 zł'
   }, {
-    title: 'Diagnoza szczegółowa Sensitive Imago 530',
-    description: '350 zł'
+    title: 'Diagnoza szczegółowa Sensitiv Imago 530 + BICOM (PROMOCJA - 400 zł)',
+    description: '450 zł'
+  }, {
+    title: 'Diagnoza BICOM dorosły',
+    description: '200 zł'
+  }, {
+    title: 'Diagnoza BICOM dziecko',
+    description: '150 zł'
   }, {
     title: 'Terapia BICOM (jednorazowa)',
     description: '70 zł'
@@ -152,13 +158,13 @@ app.controller('PricingController', function ($scope) {
     title: 'Pełna terapia uzależnień (karnet)',
     description: '320 zł'
   }, {
-    title: 'Badanie z użyciem aparatu specjalistycznego BICOM Chi (jednorazowa)',
+    title: 'BICOM Chip',
     description: '30 zł'
   }, {
     title: 'Tworzenie indywidualnych leków informacyjnych (Spektronosod)',
     description: '40 zł'
   }, {
-    title: 'Dobranie rodzaju oraz dawki leku za pośrednictwem Sensitive Imago 530',
+    title: 'Dobranie rodzaju oraz dawki leku za pośrednictwem Sensitiv Imago 530 (możliwe po uprzedniej diagnozie)',
     description: '40 zł'
   }]
 });

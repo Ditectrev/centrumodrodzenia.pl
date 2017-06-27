@@ -412,7 +412,8 @@ h3.service-title {
   padding: 20px 20px; }
 .pm-staff-profile-details .pm-staff-profile-bio {
   color: #4b4b4b;
-  font-weight: 100; }
+  font-weight: 100;
+  text-align: justify; }
 .pm-staff-profile-details .pm-staff-profile-name {
   color: #4b4b4b;
   font-size: 24px; }
@@ -420,25 +421,6 @@ h3.service-title {
   color: #4b4b4b;
   font-weight: 500;
   padding: 12px 0; }
-
-.price-table {
-  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.4);
-  margin-bottom: 20px;
-  position: relative; }
-.price-table .pricing-head {
-  background: #ffffff;
-  padding: 40px;
-  text-align: center; }
-.price-table .pricing-head h4 {
-  border-bottom: 1px solid #232c3b;
-  color: #232c3b;
-  font-size: 22px;
-  letter-spacing: 1px;
-  margin-top: 0;
-  padding-bottom: 20px; }
-.price-table .pricing-head .amount {
-  font-size: 60px;
-  font-weight: bold; }
 
 #contact .form-control {
   background: #fafafa;

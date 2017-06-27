@@ -45,13 +45,23 @@
         <p>Poniżej przedstawiamy Państwu nasz cennik, dziękujemy za zapoznanie się z nim.</p>
         <hr class="bottom-line">
       </div>
-      <div class="col-sm-4" ng-repeat="item in data">
-        <div class="price-table">
-          <div class="pricing-head">
-            <h4>{{item.title}}</h4>
-            <span class="amount">{{item.description}}</span>
-          </div>
-        </div>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Lp.</th>
+              <th>Nazwa zabiegu</th>
+              <th>Cena</th>
+            </tr>
+          </thead>
+          <tbody ng-repeat="item in data">
+            <tr>
+              <td>{{data.indexOf(item) + 1}}</td>
+              <td>{{item.title}}</td>
+              <td>{{item.description}}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
