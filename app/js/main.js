@@ -1,7 +1,7 @@
 // Angular routing.
 document.write('<base href="' + document.location + '" />');
 
-var app = angular.module('myApp', ['ngRoute', 'ngMap', 'ngMaterial', 'ngAnimate', 'ngAria'])
+var app = angular.module('myApp', ['ngRoute', 'ngMap', 'ngMaterial', 'ngAnimate', 'ngAria', 'ngSanitize'])
   .config(function($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
@@ -74,41 +74,32 @@ app.controller('ServicesController', function ($scope, $compile) {
   // console.log('inside services controller');
 
   $scope.data = [{
-    title: 'Diagnostyka i terapia narządów',
-    description: 'Opis usługi',
-    image: './images/course01.jpg'
+    description: 'Podczas kuracji narządy są stymulowane do usuwania toksyn oraz dostrajają się do częstotliwości organów pracujących prawidłowo. Jest to bezpieczna, szybka i skuteczna metoda w leczeniu wielu schorzeń.',
+    image: './images/narzady.jpg'
   }, {
-    title: 'Diagnostyka i likwidacja boreliozy',
-    description: 'Opis usługi',
-    image: './images/course02.jpg'
+    description: '<b>Najczęstsze objawy</b>:  zmęczenie, zaburzenia koncentracji i pamięci, otępienie, drętwienie kończyn, zaburzenia rytmu serca, słaba wydolność fizyczna, bóle stawów, sztywność karku, depresja, silne bóle głowy i inne.',
+    image: './images/borelioza.jpg'
   }, {
-    title: 'Diagnostyka i likwidacja bakterii i wirusów',
-    description: 'Opis usługi',
-    image: './images/course03.jpg'
+    description: 'Dokładna diagnostyka konkretnego rodzaju bakterii lub wirusa zapewnia szybką, skuteczną i bezpieczną terapię bez konieczności stosowania substancji syntetycznych bardzo często wywołujących liczne skutki uboczne.',
+    image: './images/bakterie.jpg'
   }, {
-    title: 'Diagnostyka i likwidacja pasożytów',
-    description: 'Opis usługi',
-    image: './images/course04.jpg'
+    description: '<b>Najczęstsze objawy</b>: pokasływanie, okresowe napady suchego kaszlu, chrząkanie, nadmierny apetyt bez przyrostu wagi, osłabienie, anemia, podkrążone oczy, bóle brzucha, zaparcia lub biegunki, problemy skórne (np. wysypka) i inne.',
+    image: './images/pasozyty.jpg'
   }, {
-    title: 'Terapia stanów psychologicznych',
-    description: 'Opis usługi',
-    image: './images/course05.jpg'
+    description: '<b>Najczęstsze objawy</b>: zmęczenie, suchość w ustach, uczucie zatkanego nosa, nawracające, trudno gojące się problemy skórne (świąd, łuszczenie), alergie, śluzowate stolce, wzdęcia, nieokreślone bóle brzucha i inne.',
+    image: './images/grzyby.jpg'
   }, {
-    title: 'Diagnostyka i likwidacja alergii',
-    description: 'Opis usługi',
-    image: './images/course06.jpg'
+    description: 'Biorezonans wykazuje bardzo dużą skuteczność w leczeniu bezsenności – efekty są odczuwane już w dniu terapii. Terapia obejmować może także poprawę samopoczucia, eliminację lęków, stresu i wiele innych.',
+    image: './images/psychologia.jpg'
   }, {
-    title: 'Terapia Uzależnień',
-    description: 'Opis usługi',
-    image: './images/course07.jpg'
+    description: '<b>Najczęstsze objawy alergii</b>: katar, częste kichanie, kaszel, swędzenie, pieczenie i przekrwienie oczu, osłabienie, drażliwość. Ze strony układu pokarmowego: problemy skórne, biegunka i utrata masy ciała.',
+    image: './images/alergia.jpg'
   }, {
-    title: 'Detoksykacja organizmu',
-    description: 'Opis usługi',
-    image: './images/course08.jpg'
+    description: 'Terapia ma na celu zmniejszenie chęci sięgnięcia po papierosa. Jednocześnie wspomaga odtruwanie organizmu ze szkodliwych złogów nagromadzonych na skutek wdychania dymu tytoniowego – zmysły smaku i węchu zaczynają działać normalnie.',
+    image: './images/uzaleznienia.jpg'
   }, {
-    title: 'Dobranie rodzajów oraz indywidualnych dawek leków i suplementów',
-    description: 'Opis usługi',
-    image: './images/course01.jpg'
+    description: '<b>Najczęstsze objawy obciążenia organizmu toksynami</b>: ciągłe zmęczenie, osłabienie koncentracji i pamięci, choroby przewlekłe (np. choroby  tarczycy). W następstwie także choroby nowotworowe.',
+    image: './images/detoks.jpg'
   }]
 });
 
@@ -118,14 +109,14 @@ app.controller('AboutController', function ($scope, $compile) {
 
   $scope.data = [{
     name: 'Klaudia Buczek',
-    title: 'mgr chemii medycznej',
-    description: 'Konsultantka totalnej biologii, radiesteta–terapeutka oraz refleksoterapeutka. Pasjonatka medycyny chińskiej oraz opartej na niej dietetyki pięciu przemian. Certyfikowana operatorka biorezonansu Sensitiv Imago 530. Ukończyła także szkolenie z obsługi urządzenia BICOM. Odbyła kurs metody samokontroli umysłu metodą Silvy. Dzięki specjalistycznym kursom naturoterapii zdobyła umiejętności  wykonywania masażu bańką chińską, masażu energetycznego polarity, świecowania uszu. W swojej pracy kieruje się poszukiwaniem prawdziwej przyczyny problemu co zapewnia skuteczność oraz precyzję w działaniu.',
-    image: './images/mentor.jpg'
+    title: 'Założycielka',
+    description: 'Z wykształcenia mgr chemii medycznej. Konsultantka totalnej biologii, radiesteta–terapeutka oraz refleksoterapeutka. Obecnie także studentka ostatniego semestru naturoterapii we Wrocławskim Studium Edukacji Ekologicznej, co da jej zawód naturopaty. Pasjonatka i studentka medycyny chińskiej oraz opartej na niej dietetyki pięciu przemian. Certyfikowana operatorka biorezonansu Sensitiv Imago 530. Ukończyła także szkolenie z obsługi urządzenia BICOM. Odbyła kurs metody samokontroli umysłu metodą Silvy. Dzięki specjalistycznym kursom naturoterapii zdobyła umiejętności  wykonywania masażu bańką chińską, masażu energetycznego polarity, świecowania uszu. W swojej pracy kieruje się poszukiwaniem prawdziwej przyczyny problemu co zapewnia skuteczność oraz precyzję w działaniu.',
+    image: './images/klaudia.jpg'
   }, {
     name: 'Mateusz Pruszowski',
-    title: 'inż. chemii procesowej',
-    description: 'Konsultant totalnej biologii. Certyfikowany operator Sensitiv Imago 530. Ukończył szkolenie z obsługi urządzenia BICOM. Ukończył kursy metody samokontroli umysłu metodą Silvy. Dzięki specjalistycznym kursom naturoterapii zdobył umiejętności  wykonywania masażu bańką chińską, masażu energetycznego polarity oraz Reiki, świecowania i konchowania uszu. Pasjonat i student medycyny chińskiej. Refleksoterapeuta.  Jego misją jest szczera pomoc w rozwiązywaniu problemów zdrowotnych oraz poszerzanie świadomości społeczeństwa.',
-    image: './images/mentor.jpg'
+    title: 'Założyciel',
+    description: 'Wyższe wykształcenie zdobył na Politechnice Wrocławskiej na studiach o specjalności Inżynieria Chemiczna i Procesowa. Obecnie kończy studia we Wrocławskim Studium Edukacji Ekologicznej dające zawód naturopaty, bioenergoterapeuty oraz radiestety. Konsultant totalnej biologii. Certyfikowany operator Sensitiv Imago 530. Ukończył szkolenie z obsługi urządzenia BICOM. Ukończył kursy metody samokontroli umysłu metodą Silvy. Dzięki specjalistycznym kursom naturoterapii zdobył umiejętności  wykonywania masażu bańką chińską, masażu energetycznego polarity oraz Reiki, świecowania i konchowania uszu. Pasjonat i student medycyny chińskiej. Refleksoterapeuta.  Jego misją jest szczera pomoc w rozwiązywaniu problemów zdrowotnych oraz poszerzanie świadomości społeczeństwa.',
+    image: './images/mateusz.jpg'
   }]
 });
 
@@ -135,46 +126,43 @@ app.controller('PricingController', function ($scope) {
 
   $scope.data = [{
     title: 'Diagnoza kontrolna',
-    description: '0 zł'
+    price: '0 zł'
   }, {
-    title: 'Diagnoza ogólna Sensitiv Imago 530 + BICOM (PROMOCJA - 250 zł)',
-    description: '300 zł'
+    title: 'Diagnoza ogólna Sensitiv Imago 530 + BICOM',
+    price: '<s>300 zł</s> 250 zł'
   }, {
-    title: 'Diagnoza szczegółowa Sensitiv Imago 530 + BICOM (PROMOCJA - 400 zł)',
-    description: '450 zł'
+    title: 'Diagnoza szczegółowa Sensitiv Imago 530 + BICOM',
+    price: '<s>450 zł</s> 400 zł'
   }, {
-    title: 'Diagnoza BICOM dorosły',
-    description: '200 zł'
+    title: 'Diagnoza BICOM - dorosły',
+    price: '200 zł'
   }, {
-    title: 'Diagnoza BICOM dziecko',
-    description: '150 zł'
+    title: 'Diagnoza BICOM - dziecko',
+    price: '150 zł'
   }, {
     title: 'Terapia BICOM (jednorazowa)',
-    description: '70 zł'
+    price: '70 zł'
   }, {
     title: 'Terapia uzależnień (jednorazowa)',
-    description: '100 zł'
+    price: '100 zł'
   }, {
     title: 'Pełna terapia uzależnień (karnet)',
-    description: '320 zł'
+    price: '320 zł'
   }, {
     title: 'BICOM Chip',
-    description: '30 zł'
+    price: '30 zł'
   }, {
     title: 'Tworzenie indywidualnych leków informacyjnych (Spektronosod)',
-    description: '40 zł'
+    price: '40 zł'
   }, {
     title: 'Dobranie rodzaju oraz dawki leku za pośrednictwem Sensitiv Imago 530 (możliwe po uprzedniej diagnozie)',
-    description: '40 zł'
+    price: '40 zł'
   }]
 });
 
 // Contact.
 app.controller('ContactController', function ($scope, $compile, NgMap) {
   // console.log('inside contact controller');
-  NgMap.getMap().then(function (map) {
-    $scope.googleMapsUrl = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCgak4bu3Ppg2MGxaoi56ymcUrfiWQXM3A";
-  });
 });
 
 // Contact form.
@@ -194,9 +182,40 @@ app.controller('FormController', function($scope, $http) {
     })
       .then(function successCallback(response) {
         $scope.formData = {}; // Clear input fields in contact form.
+        this.successMessage = document.getElementById('sendmessage');
+        this.successMessage.className += ' show';
         // console.log('success while sending, response data: ' + response.data);
       }, function errorCallback(response) {
+        this.errorMessage = document.getElementById('errormessage');
+        this.errorMessage.className += ' show';
         // console.log('error while sending, response: ' + response);
       });
   }
+});
+
+// Google Analytics.
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-102822762-1', 'auto');
+ga('send', 'pageview');
+
+// Scroll to top.
+$(window).scroll(function() {
+  // Check if page is scrolled more than 200 px.
+  if ($(this).scrollTop() >= 200) {
+    // Page is scrolled more than 200 px.
+
+    $('#return-to-top').fadeIn(100); // Fade in the arrow.
+  } else {
+    $('#return-to-top').fadeOut(100); // Fade out the arrow.
+  }
+});
+$('#return-to-top').click(function () {
+  // Arrow is clicked.
+  $('body, html').animate({
+    scrollTop: 0 // Scroll to top of body.
+  }, 2000);
 });

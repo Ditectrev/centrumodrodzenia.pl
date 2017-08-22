@@ -23,7 +23,7 @@
   <meta property="og:title" content="Centrum Odrodzenia Feniks"/>
   <meta property="og:description"
         content="Usługi | Centrum Odrodzenia Feniks prowadzi terapię pozwalającą odzyskać Ci siły witalne poprzez użycie metod biorezonansu."/>
-  <meta property="og:image" content="https://centrumodrodzenia.pl/logo.png"/>
+  <meta property="og:image" content="https://centrumodrodzenia.pl/images/logo.png"/>
   <!--/ Facebook meta. -->
 </head>
 <body>
@@ -32,18 +32,15 @@
   <div class="container">
     <div class="row">
       <div class="header-section text-center">
-        <h2>Usługi</h2>
         <p>Poniżej prezentujemy Państwu zakres świadczonych przez nas usług.</p>
         <hr class="bottom-line">
       </div>
-      <div class="col-md-4 col-sm-6 padleft-right" ng-repeat="item in data">
-        <h3 class="service-title">{{item.title}}</h3>
-        <figure class="imghvr-zoom-out"><img src="{{item.image}}" alt="usługa 1" title="Usługa 1"
+      <div class="col-lg-4 col-md-6 padleft-right" ng-repeat="item in data">
+        <figure class="imghvr-zoom-out"><img src="{{item.image}}" alt="usługa" title="Usługa"
                                                      class="img-responsive">
           <figcaption>
-            <p>{{item.description}}</p>
+            <p ng-bind-html="item.description">{{item.description}}</p>
           </figcaption>
-          <a href="#"></a>
         </figure>
       </div>
     </div>

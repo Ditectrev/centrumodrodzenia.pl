@@ -23,7 +23,7 @@
   <meta property="og:title" content="Centrum Odrodzenia Feniks"/>
   <meta property="og:description"
         content="O nas | Centrum Odrodzenia Feniks prowadzi terapię pozwalającą odzyskać Ci siły witalne poprzez użycie metod biorezonansu."/>
-  <meta property="og:image" content="https://centrumodrodzenia.pl/logo.png"/>
+  <meta property="og:image" content="https://centrumodrodzenia.pl/images/logo.png"/>
   <!--/ Facebook meta. -->
 </head>
 <body>
@@ -32,21 +32,18 @@
   <div class="container">
     <div class="row">
       <div class="header-section text-center">
-        <h2>O nas</h2>
         <p>Jesteśmy wysoko wyspecjalizowanymi fachowcami w dziedzinie naturoterapii.<br>Wykonaj naturalny krok i zaufaj
           nam.</p>
-        <hr class="bottom-line">
       </div>
       <div class="col-sm-6" ng-repeat="item in data">
         <div class="pm-staff-profile-container">
-          <div class="pm-staff-profile-image-wrappe text-center">
-            <div class="pm-staff-profile-image"><img src="{{item.image}}" alt="Mateusz"
+          <div class="pm-staff-profile-image-wrapper text-center">
+            <div class="pm-staff-profile-image"><img src="{{item.image}}" alt="{{item.name}}"
                                                      class="img-thumbnail img-circle">
             </div>
           </div>
           <div class="pm-staff-profile-details text-center">
             <p class="pm-staff-profile-name">{{item.name}}</p>
-            <p class="pm-staff-profile-title">{{item.title}}</p>
             <p class="pm-staff-profile-bio">{{item.description}}</p>
           </div>
         </div>

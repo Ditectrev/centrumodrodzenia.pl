@@ -23,15 +23,24 @@
   <meta property="og:title" content="Centrum Odrodzenia Feniks"/>
   <meta property="og:description"
         content="Kontakt | Centrum Odrodzenia Feniks prowadzi terapię pozwalającą odzyskać Ci siły witalne poprzez użycie metod biorezonansu."/>
-  <meta property="og:image" content="https://centrumodrodzenia.pl/logo.png"/>
+  <meta property="og:image" content="https://centrumodrodzenia.pl/images/logo.png"/>
   <!--/ Facebook meta. -->
 </head>
 <body>
 <!-- Google Maps. -->
-<div map-lazy-load="https://maps.google.com/maps/api/js" class="google-maps">
-  <ng-map center="50.19994,17.8227293" zoom="15" style="height: 500px;">
-    <marker position="[50.19994,17.8227293]" />
-  </ng-map>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-sm-12">
+      <div map-lazy-load="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgak4bu3Ppg2MGxaoi56ymcUrfiWQXM3A" class="google-maps">
+        <ng-map center="50.19994,17.8227293" zoom="15" style="height: 500px;">
+          <marker position="[50.19994,17.8227293]" />
+        </ng-map>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-12">
+      <img src="images/dojazd.jpg" alt="dojazd" class="img-responsive office-location-photo">
+    </div>
+  </div>
 </div>
 <!--/ Google Maps. -->
 
@@ -44,12 +53,11 @@
         <p>+48 500 649 200<br>centrumodrodzenia@gmail.com<br>ul. Niepodległości 12A, 48-100 Głubczyce</p>
         <hr class="bottom-line">
       </div>
-      <!--<div id="sendmessage">Twoja wiadomość została wysłana. Skontaktujemy się z Tobą tak szybko, jak to będzie-->
-        <!--możliwe.-->
-      <!--</div>-->
-      <!--<div id="errormessage"></div>-->
+      <div id="sendmessage">Twoja wiadomość została wysłana. Skontaktujemy się z Tobą tak szybko, jak to będzie możliwe.</div>
+      <div id="errormessage">Wystąpił błąd podczas wysyłania wiadomości, prosimy o kontakt telefoniczny +48 500 649 200 lub mailowy centrumodrodzenia@gmail.com</div>
       <div class="messages" ng-show="formData.messages" ng-bind="formData.messages">{{formData.messages}}</div>
-      <form name="form" role="form" class="contactForm" ng-submit="submitForm()" novalidate> <!-- Prevents HTML5 validation since custom validation will be used. -->
+      <!-- Prevents HTML5 validation since custom validation will be used. -->
+      <form name="form" role="form" class="contactForm" ng-submit="submitForm()" novalidate accept-charset="UTF-8">
         <div class="col-sm-6 col-xs-12 left">
           <!-- Name. -->
           <div class="form-group" ng-class="{'has-error': form.name.$invalid && !form.name.$pristine}">

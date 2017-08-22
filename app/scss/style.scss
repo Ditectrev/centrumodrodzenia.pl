@@ -7,7 +7,8 @@ $cod-gray: #111111;
 $cod-gray-070: rgba(12,11,11,.7);
 $cod-gray-080: rgba(12,11,11,.7);
 $ebony-clay: #232c3b;
-$emerald: #5fcf80;
+$apple: #58a339;
+$emerald-030: rgba(95,207,128,.3);
 $ferra-030: rgba(119,81,81,.3);
 $green: #008000;
 $lynch: #637a91;
@@ -52,10 +53,10 @@ $white-020: rgba(255,255,255,.2);
 
 // General.
 a {
-  color: $emerald;
+  color: $apple;
 
   &:hover {
-    color: $emerald;
+    color: $apple;
   }
 }
 
@@ -95,7 +96,7 @@ ul, ol {
 }
 
 .btn {
-  background-color: $emerald;
+  background-color: $apple;
   color: $white;
   margin-top: 10px;
   padding: 10px 20px;
@@ -105,18 +106,60 @@ ul, ol {
   &:focus, &:hover {
     background-color: $white;
     border-color: $white;
-    color: $emerald;
+    color: $apple;
 
     @include transition(all .3s ease-in-out);
   }
 }
 
 .section-padding {
-  padding: 60px 0;
+  padding: 50px 0;
+}
+
+.paragraph-padding {
+  padding: 0 20%;
 }
 
 .white {
   color: $white;
+}
+
+.cookiebanner span a {
+  display: none;
+}
+
+#return-to-top {
+  background: rgba(127,127,127,.3);
+  border-radius: 35px;
+  bottom: 20px;
+  display: block;
+  height: 50px;
+  position: fixed;
+  right: 20px;
+  text-decoration: none;
+  width: 50px;
+
+  @include transition(all 1s ease);
+
+  i {
+    color: $white;
+    font-size: 20px;
+    left: 16px;
+    margin: 0;
+    position: relative;
+    top: 13px;
+
+    @include transition(all .2s ease);
+
+    &:hover {
+      color: $white;
+      top: 10px;
+    }
+  }
+
+  &:hover {
+    background: rgba(127,127,127,.8);
+  }
 }
 
 // Navigation bar.
@@ -124,7 +167,7 @@ ul, ol {
   background-color: $white;
 
   .navbar-brand {
-    color: $emerald;
+    color: $apple;
     font-family: 'Dosis', sans-serif;
     font-size: 36px;
     font-weight: 700;
@@ -147,13 +190,12 @@ ul, ol {
     }
     > li > a {
       color: $rolling-stone;
-      font-size: 14px;
+      font-size: 18px;
       font-weight: 700;
-      margin: 10px 5px;
-      padding: 10px 15px;
+      margin-top: 1em;
 
       &:hover {
-        color: $emerald;
+        color: $apple;
       }
     }
   }
@@ -162,14 +204,18 @@ ul, ol {
 // Banner.
 .banner {
   background: url("../images/bg-banner.jpg") no-repeat center top;
-  min-height: 580px;
+  min-height: 800px;
   position: relative;
 
   @include background-size(cover);
 
   .bg-color {
     background-color: $cod-gray-080;
-    min-height: 580px;
+    min-height: 800px;
+  }
+
+  img {
+    max-width: 200px;
   }
 }
 
@@ -185,11 +231,12 @@ ul, ol {
 
   .small-text {
     font-size: 16px;
+    margin-left: -12px;
   }
 }
 
 .text-border {
-  border: 5px solid $emerald;
+  //border: 5px solid $apple;
   display: inline-block;
   margin-top: 150px;
 
@@ -205,10 +252,10 @@ ul, ol {
 .mouse {
   border: 2px solid $white;
   border-radius: 12px;
-  bottom: 40px;
+  bottom: 10px;
   height: 45px;
   left: 50%;
-  margin-left: -12px;
+  margin-left: -17px;
   position: absolute;
   width: 25px;
 
@@ -284,129 +331,32 @@ ul, ol {
     width: 40%;
 
     i {
-      color: $emerald;
+      color: $apple;
       font-size: 39px;
       margin-top: 7px;
     }
   }
 }
 
+#feature1 p, #feature2 p, #feature3 p {
+  text-align: justify;
+}
 
-// Organisations.
-#organisations {
+#feature1 {
+  background-color: $white;
+}
+
+#feature2 {
   background-color: $alabaster;
 }
 
-.orga-stru {
-  background-color: $emerald;
-  border-radius: 0px 80px 99px 99px;
-  height: auto;
-  padding: 10px 10px 25px;
-  text-align: center;
-  width: 109px;
+#feature3 {
+  background-color: $white;
 
-  h3 {
-    color: $white;
-    font-size: 36px;
-    font-weight: bold;
-  }
-  i {
-    color: $white;
-    font-size: 150px;
-    margin-top: 35px;
-  }
-  p {
-    color: $white;
-    font-size: 14px;
-    font-weight: normal;
-    line-height: 20px;
-    padding-top: 15px;
+  img {
+    max-height: 400px;
   }
 }
-
-h3.det-txt {
-  font-size: 32px;
-  font-weight: bold;
-}
-
-h4.sm-txt {
-  color: $emerald;
-  font-size: 20px;
-}
-
-p.det-p {
-  padding: 40px 0;
-}
-
-
-// Team.
-.pm-staff-profile-image {
-  background-color: $silver;
-  border-radius: 50%;
-  display: inline-block;
-  height: 150px;
-  width: 150px;
-}
-
-#testimonial {
-  background-color: $cod-gray-070;
-
-  .bg-white {
-    background-color: $white;
-  }
-  .text-comment {
-    background-color: $white;
-    padding: 20px;
-  }
-  .text-par {
-    font-size: 20px;
-    padding-bottom: 15px;
-  }
-}
-
-
-// CTA.
-#cta-2 {
-  padding: 140px 0;
-
-  .cta-2-txt {
-    font-size: 24px;
-    line-height: 34px;
-    margin: 0 auto;
-    padding-bottom: 15px;
-    text-align: center;
-  }
-  .cta-2-form input[type="tel"] {
-    background-color: $alabaster;
-    border: 1px solid $emerald;
-    border-radius: 30px 0 0 30px;
-    color: $ebony-clay;
-    font-size: 18px;
-    font-weight: 100;
-    margin-bottom: 2px;
-    margin-left: -4px;
-    min-width: 300px;
-    padding: 13px 40px;
-  }
-  .cta-2-form-submit-btn {
-    background-color: $emerald;
-    border: 1px solid $emerald;
-    border-radius: 0 30px 30px 0;
-    color: $white;
-    font-size: 18px;
-    margin-left: -4px;
-    padding: 13px 40px;
-    text-transform: capitalize;
-
-    @include transition(all .3s);
-
-    &:hover {
-      background-color: $white;
-      color: $emerald;
-    }
-  }
-}
-
 
 // Footer.
 footer {
@@ -446,41 +396,40 @@ footer {
         @include transition(all .3s ease-out);
 
         &:hover {
-          color: $emerald;
+          color: $apple;
         }
       }
     }
   }
 }
 
-
 // Services.
 [class*=" imghvr-"], [class^="imghvr-"] {
-  background-color: $emerald;
-  margin-bottom: 20px;
+  background-color: $apple;
 
   figcaption {
-    background-color: $emerald;
+    align-items: center;
+    background-color: $apple;
     color: $white;
+    display: flex;
+    justify-content: center;
 
     p {
-      position: absolute;
-      padding-top: 30px;
+      text-align: justify;
     }
   }
 }
 
-h3.service-title {
-  color: $white;
-  position: absolute;
-  padding-left: 20px;
-  z-index: 100;
+// Team.
+.pm-staff-profile-image {
+  display: inline-block;
+  height: 200px;
+  width: 200px;
+  padding: 0px;
 }
 
-
-// Team.
 .pm-staff-profile-details {
-  padding: 20px 20px;
+  padding: 10px 20px;
 
   .pm-staff-profile-bio {
     color: $tundora;
@@ -488,17 +437,18 @@ h3.service-title {
     text-align: justify;
   }
   .pm-staff-profile-name {
-    color: $tundora;
+    color: $black;
     font-size: 24px;
-  }
-  .pm-staff-profile-title {
-    color: $tundora;
-    font-weight: 500;
-    padding: 12px 0;
+    padding: 10px 0 10px;
   }
 }
 
 // Contact.
+.office-location-photo {
+  height: 500px;
+  margin: 0 auto;
+}
+
 #contact .form-control {
   background: $alabaster;
   border: 1px solid $ferra-030;
@@ -526,7 +476,7 @@ h3.service-title {
 }
 
 .light-form-button {
-  background: $emerald;
+  background: $apple;
   border: 1px solid $ferra-030;
   color: white;
   padding: 10px;
@@ -562,6 +512,14 @@ textarea {
 
 // Media Queries.
 @media (min-width: 769px) and (max-width: 980px) {
+  .navbar-default .navbar-header img {
+    max-width: 200px;
+  }
+
+  .paragraph-padding {
+    padding: 0;
+  }
+
   .price-table {
     .pricing-head {
       .amount {
@@ -576,6 +534,22 @@ textarea {
 }
 
 @media (min-width: 451px) and (max-width: 768px) {
+  .banner {
+    min-height: 900px;
+
+    .bg-color {
+      min-height: 900px;
+    }
+  }
+
+  .bicom-photo {
+    width: 100%;
+  }
+
+  .paragraph-padding {
+    padding: 0;
+  }
+
   .feature-info {
     margin-bottom: 30px;
   }
@@ -594,9 +568,29 @@ textarea {
 }
 
 @media (min-width: 20px) and (max-width: 450px) {
+  .banner {
+    min-height: 800px;
+
+    .bg-color {
+      min-height: 800px;
+    }
+  }
+
+  .bicom-photo {
+    width: 100%;
+  }
+
+  .paragraph-padding {
+    padding: 0;
+  }
+
   .navbar-default {
     .navbar-brand {
       margin-left: 10px;
+
+      img {
+        max-width: 300px;
+      }
     }
     .navbar-nav > li > a {
       text-align: center;

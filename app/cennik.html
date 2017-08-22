@@ -21,7 +21,7 @@
   <meta property="og:title" content="Centrum Odrodzenia Feniks"/>
   <meta property="og:description"
         content="Cennik | Centrum Odrodzenia Feniks prowadzi terapię pozwalającą odzyskać Ci siły witalne poprzez użycie metod biorezonansu."/>
-  <meta property="og:image" content="https://centrumodrodzenia.pl/logo.png"/>
+  <meta property="og:image" content="https://centrumodrodzenia.pl/images/logo.png"/>
   <!--/ Facebook meta. -->
 
   <!-- Stylesheeets CDN. -->
@@ -41,24 +41,23 @@
   <div class="container">
     <div class="row">
       <div class="header-section text-center">
-        <h2>Cennik</h2>
         <p>Poniżej przedstawiamy Państwu nasz cennik, dziękujemy za zapoznanie się z nim.</p>
         <hr class="bottom-line">
       </div>
-      <div class="table-responsive">
+      <div class="col-xs-12">
         <table class="table">
           <thead>
             <tr>
-              <th>Lp.</th>
+              <!--<th>Lp.</th>-->
               <th>Nazwa zabiegu</th>
               <th>Cena</th>
             </tr>
           </thead>
           <tbody ng-repeat="item in data">
             <tr>
-              <td>{{data.indexOf(item) + 1}}</td>
+              <!--<td>{{data.indexOf(item) + 1}}</td>-->
               <td>{{item.title}}</td>
-              <td>{{item.description}}</td>
+              <td ng-bind-html="item.price">{{item.price}}</td>
             </tr>
           </tbody>
         </table>
