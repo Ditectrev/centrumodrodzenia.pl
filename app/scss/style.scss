@@ -1,0 +1,672 @@
+// Colors.
+$abbey: #4b4b4c;
+$alabaster: #fafafa;
+$black: #000000;
+$black-040: rgba(0,0,0,.4);
+$cod-gray: #111111;
+$cod-gray-070: rgba(12,11,11,.7);
+$cod-gray-080: rgba(12,11,11,.7);
+$ebony-clay: #232c3b;
+$apple: #58a339;
+$emerald-030: rgba(95,207,128,.3);
+$ferra-030: rgba(119,81,81,.3);
+$green: #008000;
+$lynch: #637a91;
+$red: #ff0000;
+$rolling-stone: #717f86;
+$silver: #c6c6c6;
+$tundora: #4b4b4b;
+$white: #ffffff;
+$white-020: rgba(255,255,255,.2);
+
+// Mixins.
+@mixin background-size($background-size...) {
+  -webkit-background-size: $background-size;
+  background-size: $background-size;
+}
+
+@mixin keyframes($keyframes...) {
+  @-webkit-keyframes #{$keyframes} {
+    @content;
+  }
+  @-moz-keyframes #{$keyframes} {
+    @content;
+  }
+  @-ms-keyframes #{$keyframes} {
+    @content;
+  }
+  @-o-keyframes #{$keyframes} {
+    @content;
+  }
+  @keyframes #{$keyframes} {
+    @content;
+  }
+}
+
+@mixin transition($transition...) {
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -ms-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
+
+// General.
+a {
+  color: $apple;
+
+  &:hover {
+    color: $apple;
+  }
+}
+
+body {
+  color: $rolling-stone;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+// Prevent from Angular default styling.
+body.md-default-theme, body, html.md-default-theme, html {
+  background-color: $white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $abbey;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 24px;
+  padding-bottom: 15px;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+// Miscellaneous.
+.bottom-line {
+  background-color: $lynch;
+  height: 3px;
+  width: 25px;
+}
+
+.btn {
+  background-color: $apple;
+  color: $white;
+  margin: 10px 0 70px!important;
+  padding: 10px 20px;
+
+  @include transition(all .3s ease-in-out);
+
+  &:focus, &:hover {
+    background-color: $white;
+    border-color: $white;
+    color: $apple;
+
+    @include transition(all .3s ease-in-out);
+  }
+}
+
+.section-padding {
+  padding: 50px 0;
+}
+
+.paragraph-padding {
+  padding: 0 20%;
+}
+
+.white {
+  color: $white;
+}
+
+.cookiebanner span a {
+  display: none;
+}
+
+#return-to-top {
+  background: rgba(127,127,127,.3);
+  border-radius: 35px;
+  bottom: 20px;
+  display: block;
+  height: 50px;
+  position: fixed;
+  right: 20px;
+  text-decoration: none;
+  width: 50px;
+
+  @include transition(all 1s ease);
+
+  i {
+    color: $white;
+    font-size: 20px;
+    left: 16px;
+    margin: 0;
+    position: relative;
+    top: 13px;
+
+    @include transition(all .2s ease);
+
+    &:hover {
+      color: $white;
+      top: 10px;
+    }
+  }
+
+  &:hover {
+    background: rgba(127,127,127,.8);
+  }
+}
+
+// Navigation bar.
+.navbar-default {
+  background-color: $white;
+
+  .navbar-brand {
+    color: $apple;
+    font-family: 'Dosis', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    height: inherit;
+    margin: 20px 0;
+    padding: 0;
+    text-transform: uppercase;
+
+    span {
+      font-weight: 100;
+    }
+  }
+  .navbar-nav {
+    > .active a {
+      background-color: $white;
+
+      &:focus, &:hover {
+        background-color: $white;
+      }
+    }
+    > li > a {
+      color: $rolling-stone;
+      font-size: 18px;
+      font-weight: 700;
+      margin-top: 1em;
+
+      &:hover {
+        color: $apple;
+      }
+    }
+  }
+}
+
+// Banner.
+.banner {
+  background: url("../images/bg-banner.jpg") no-repeat center top;
+  min-height: 800px;
+  position: relative;
+
+  @include background-size(cover);
+
+  .bg-color {
+    background-color: $cod-gray-080;
+    min-height: 800px;
+  }
+
+  img {
+    max-width: 200px;
+  }
+}
+
+.intro-para {
+  color: $white;
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 45px;
+  margin-top: 30px;
+
+  .big-text {
+    font-size: 35px;
+  }
+
+  .small-text {
+    font-size: 16px;
+    margin-left: -12px;
+  }
+}
+
+.text-border {
+  //border: 5px solid $apple;
+  display: inline-block;
+  margin-top: 150px;
+
+  .text-dec {
+    color: $white;
+    font-size: 24px;
+    margin: 15px 0;
+    padding: 10px 20px;
+    text-transform: uppercase;
+  }
+}
+
+.mouse {
+  border: 2px solid $white;
+  border-radius: 12px;
+  bottom: 10px;
+  height: 45px;
+  left: 50%;
+  margin-left: -17px;
+  position: absolute;
+  width: 25px;
+
+  &::after {
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-name: rotateplane;
+    background-color: $white;
+    border-radius: 100%;
+    content: "";
+    height: 5px;
+    left: 50%;
+    margin-left: -2px;
+    position: absolute;
+    top: 10px;
+    width: 5px;
+
+    @include transition(all .3s ease-in);
+
+    @include keyframes(rotateplane)  {
+      0% {
+        top: 10px;
+      }
+      12.5% {
+        top: 12px;
+      }
+      25% {
+        top: 14px;
+      }
+      37.5% {
+        top: 16px;
+      }
+      50% {
+        top: 18px;
+      }
+      62.5% {
+        top: 20px;
+      }
+      75% {
+        top: 22px;
+      }
+      87.5% {
+        top: 24px;
+      }
+      100% {
+        top: 26px;
+      }
+    }
+  }
+}
+
+
+// Features.
+.fea {
+  margin-top: 25px;
+
+  .heading {
+    height: 80%;
+
+    h4 {
+      color: $black;
+      font-size: 17px;
+      line-height: 1.3;
+      margin: 10px 0;
+      text-align: left;
+      font-weight: 700;
+    }
+    p {
+      text-align: left;
+    }
+  }
+  .fea-img {
+    width: 40%;
+
+    i {
+      color: $apple;
+      font-size: 39px;
+      margin-top: 7px;
+    }
+  }
+}
+
+#feature1 p, #feature2 p, #feature3 p, #feature4 p, #feature5 p {
+  text-align: justify;
+}
+
+#feature5 li {
+  padding-left: 20%;
+  text-align: left;
+}
+
+#feature1 {
+  background-color: $white;
+}
+
+#feature2 {
+  background-color: $alabaster;
+
+  figure img {
+    max-height: 400px;
+  }
+}
+
+#feature3 {
+  background-color: $white;
+}
+
+#feature4 {
+  background-color: $alabaster;
+}
+
+#feature5 {
+  background-color: $white;
+}
+
+// Footer.
+footer {
+  background: $cod-gray;
+  color: $silver;
+  padding: 60px 0 20px;
+
+  a {
+    color: $white;
+  }
+  h3 {
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    margin-bottom: 40px;
+  }
+
+  .social-link {
+    border-bottom: 1px solid $white-020;
+    list-style: none;
+    margin: 30px 0 40px;
+    padding: 0;
+
+    li {
+      display: inline-block;
+      margin: 0 25px 25px;
+
+      @include transition(all .3s ease-out);
+
+      a {
+        border-radius: 50%;
+        color: $white;
+        font-size: 32px;
+        line-height: 50px;
+        text-align: center;
+
+        @include transition(all .3s ease-out);
+
+        &:hover {
+          color: $apple;
+        }
+      }
+    }
+  }
+}
+
+// Services.
+[class*=" imghvr-"], [class^="imghvr-"] {
+  background-color: $apple;
+
+  figcaption {
+    align-items: center;
+    background-color: $apple;
+    color: $white;
+    display: flex;
+    justify-content: center;
+
+    p {
+      text-align: justify;
+    }
+  }
+}
+
+// Team.
+.pm-staff-profile-image {
+  display: inline-block;
+  height: 200px;
+  width: 200px;
+  padding: 0px;
+}
+
+.pm-staff-profile-details {
+  padding: 10px 20px;
+
+  .pm-staff-profile-bio {
+    color: $tundora;
+    font-weight: 100;
+    text-align: justify;
+  }
+  .pm-staff-profile-name {
+    color: $black;
+    font-size: 24px;
+    padding: 10px 0 10px;
+  }
+}
+
+// Contact.
+.office-location-photo {
+  height: 500px;
+  margin: 0 auto;
+}
+
+#contact .form-control {
+  background: $alabaster;
+  border: 1px solid $ferra-030;
+  border-radius: 0;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+#errormessage {
+  border: 1px solid $red;
+  color: $red;
+  display: none;
+  font-weight: 600;
+  margin-bottom: 15px;
+  padding: 15px;
+  text-align: center;
+
+  &.show {
+    display: block;
+  }
+}
+
+.light {
+  font-weight: 100;
+}
+
+.light-form-button {
+  background: $apple;
+  border: 1px solid $ferra-030;
+  color: white;
+  padding: 10px;
+  margin-bottom: 15px;
+  width: 24%;
+
+  @include transition(all .3s ease-in-out);
+}
+
+#sendmessage {
+  border: 1px solid $green;
+  color: $green;
+  display: none;
+  font-weight: 600;
+  margin-bottom: 15px;
+  padding: 15px;
+  text-align: center;
+
+  &.show {
+    display: block;
+  }
+}
+
+.show {
+  display: block;
+}
+
+textarea {
+  height: 228px;
+  min-height: 229px;
+  max-width: 100%;
+}
+
+// Media Queries.
+@media (min-width: 769px) and (max-width: 980px) {
+  .navbar-default .navbar-header img {
+    max-width: 200px;
+  }
+
+  .paragraph-padding {
+    padding: 0;
+  }
+
+  .price-table {
+    .pricing-head {
+      .amount {
+        font-size: 51px;
+      }
+
+      h4 {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+@media (min-width: 451px) and (max-width: 768px) {
+  .banner {
+    min-height: 900px;
+
+    .bg-color {
+      min-height: 900px;
+    }
+  }
+
+  .bicom-photo {
+    width: 100%;
+  }
+
+  .paragraph-padding {
+    padding: 0;
+  }
+
+  .feature-info {
+    margin-bottom: 30px;
+  }
+
+  .price-table {
+    .pricing-head {
+      .amount {
+        font-size: 51px;
+      }
+
+      h4 {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+@media (min-width: 20px) and (max-width: 450px) {
+  .banner {
+    min-height: 800px;
+
+    .bg-color {
+      min-height: 800px;
+    }
+  }
+
+  .bicom-photo {
+    width: 100%;
+  }
+
+  .paragraph-padding {
+    padding: 0;
+  }
+
+  .navbar-default {
+    .navbar-brand {
+      margin-left: 10px;
+
+      img {
+        max-width: 300px;
+      }
+    }
+    .navbar-nav > li > a {
+      text-align: center;
+    }
+  }
+  .text-dec {
+    font-size: 20px;
+  }
+  .big-text {
+    font-size: 30px;
+  }
+  .small-text {
+    font-size: 14px;
+  }
+  .intro-para {
+    font-size: 30px;
+  }
+  .header-section p {
+    font-size: 14px;
+  }
+  .heading {
+    margin-bottom: 20px;
+  }
+  .orga-stru {
+    margin-bottom: 20px;
+    padding: 5px 5px 15px 5px;
+    width: 15px;
+
+    h3 {
+      font-size: 28px;
+    }
+    i {
+      font-size: 92px;
+    }
+  }
+  h3.det-txt {
+    font-size: 28px;
+  }
+  .cta-2-txt {
+    font-size: 20px;
+  }
+  .text-comment, .price-table {
+    margin-bottom: 30px;
+  }
+  .contact-form-button {
+    width: 40%;
+  }
+  footer {
+    .social-link li {
+      margin: 0 5px 25px;
+    }
+  }
+  .cta-2-form-submit-btn {
+    font-size: 10px;
+  }
+  .cta-2-form input[type="email"] {
+    font-size: 10px;
+    min-width: 187px;
+    padding: 13px 10px;
+  }
+}

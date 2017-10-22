@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <!-- Page title -->
+  <title>Centrum Odrodzenia Feniks - Kontakt</title>
+  <!--/ Page title -->
+
+  <!-- Standard meta. -->
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta name="description"
+        content="Kontakt | Centrum Odrodzenia Feniks prowadzi terapię pozwalającą odzyskać Ci siły witalne poprzez użycie metod biorezonansu.">
+  <meta name="keywords"
+        content="centrum odrodzenia feniks, centrum odrodzenia, centrum odrodzenia głubczyce, feniks głubczyce, feniks kontakt, centrum odrodzenia kontakt, centrum odrodzenia głubczyce kontakt">
+  <meta name="author" content="Centrum Odrodzenia Feniks">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!--/ Standard meta. -->
+
+  <!-- Facebook meta. -->
+  <meta property="og:url" content="https://centrumodrodzenia.pl"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Centrum Odrodzenia Feniks"/>
+  <meta property="og:description"
+        content="Kontakt | Centrum Odrodzenia Feniks prowadzi terapię pozwalającą odzyskać Ci siły witalne poprzez użycie metod biorezonansu."/>
+  <meta property="og:image" content="https://centrumodrodzenia.pl/images/logo.png"/>
+  <!--/ Facebook meta. -->
+</head>
+<body>
+<!-- Google Maps. -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-sm-12">
+      <div map-lazy-load="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgak4bu3Ppg2MGxaoi56ymcUrfiWQXM3A" class="google-maps">
+        <ng-map center="50.19994,17.8227293" zoom="15" style="height: 500px;">
+          <marker position="[50.19994,17.8227293]" />
+        </ng-map>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-12">
+      <img src="images/dojazd.jpg" alt="dojazd" class="img-responsive office-location-photo">
+    </div>
+  </div>
+</div>
+<!--/ Google Maps. -->
+
+<!-- Contact. -->
+<section id="contact" class="section-padding" ng-controller="FormController">
+  <div class="container">
+    <div class="row">
+      <div class="header-section text-center">
+        <h2>Skontaktuj się z nami</h2>
+        <p>+48 500 649 200<br>centrumodrodzenia@gmail.com<br>ul. Niepodległości 12A, 48-100 Głubczyce</p>
+        <hr class="bottom-line">
+      </div>
+      <div id="sendmessage">Twoja wiadomość została wysłana. Skontaktujemy się z Tobą tak szybko, jak to będzie możliwe.</div>
+      <div id="errormessage">Wystąpił błąd podczas wysyłania wiadomości, prosimy o kontakt telefoniczny +48 500 649 200 lub mailowy centrumodrodzenia@gmail.com</div>
+      <div class="messages" ng-show="formData.messages" ng-bind="formData.messages">{{formData.messages}}</div>
+      <!-- Prevents HTML5 validation since custom validation will be used. -->
+      <form name="form" role="form" class="contactForm" ng-submit="submitForm()" novalidate accept-charset="UTF-8">
+        <div class="col-sm-6 col-xs-12 left">
+          <!-- Name. -->
+          <div class="form-group" ng-class="{'has-error': form.name.$invalid && !form.name.$pristine}">
+            <input type="text" name="name" class="form-control form" id="name" placeholder="Imię" ng-model="formData.name" ng-minlength="3" required>
+            <span class="help-block" ng-show="form.name.$error.minlength">Proszę wpisać prawidłowe imię.</span>
+          </div>
+          <!-- Subject. -->
+          <div class="form-group" ng-class="{'has-error': form.subject.$invalid && !form.subject.$pristine}">
+            <input type="text" name="subject" class="form-control" id="subject" placeholder="Temat" ng-model="formData.subject" ng-minlength="5" required>
+            <span class="help-block" ng-show="form.subject.$error.minlength">Proszę wpisać dłuższy temat.</span>
+          </div>
+          <!-- Telephone. -->
+          <div class="form-group" ng-class="{'has-error': form.tel.$invalid && !form.tel.$pristine}">
+            <input type="tel" name="tel" class="form-control" id="tel" placeholder="Telefon" ng-model="formData.tel" ng-minlength="9" ng-maxlength="9" ng-pattern="/^(\+?(\d{1}|\d{2}|\d{3})[- ]?)?\d{3}[- ]?\d{3}[- ]?\d{3}$/" required>
+            <span class="help-block" ng-show="(form.tel.$error.minlength || form.tel.$error.maxlength || form.tel.$invalid) && !form.email.$pristine">Proszę wpisać poprawny numer telefonu.</span>
+          </div>
+          <!-- Email. -->
+          <div class="form-group" ng-class="{'has-error': form.email.$invalid && !form.email.$pristine}" required>
+            <input type="email" name="email" class="form-control" id="email" placeholder="E-mail" ng-model="formData.email" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/">
+            <span class="help-block" ng-show="form.email.$invalid && !form.email.$pristine">Proszę wpisać poprawny adres e-mail.</span>
+          </div>
+        </div>
+        <div class="col-sm-6 col-xs-12 right">
+          <!-- Message. -->
+          <div class="form-group" ng-class="{'has-error': form.message.$invalid && !form.message.$pristine}">
+            <textarea name="message" class="form-control" id="message" rows="5" placeholder="Wiadomość" ng-model="formData.message" ng-minlength="10" required></textarea>
+            <span class="help-block" ng-show="form.message.$error.minlength">Proszę wpisać dłuższą treść wiadomości.</span>
+          </div>
+        </div>
+        <!-- Send button. -->
+        <div class="col-xs-12">
+          <button type="submit" id="submit" name="submit" class="form contact-form-button light-form-button oswald light" ng-disabled="form.$invalid">
+            Wyślij
+          </button>
+        </div>
+        <!--/ Send button. -->
+      </form>
+      <!--<pre>{{formData}}</pre>-->
+    </div>
+  </div>
+</section>
+<!--/ Contact. -->
+</body>
+</html>
